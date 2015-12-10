@@ -1,0 +1,35 @@
+<includeonly>
+<!-- Initial Categorization -->[[Category:Characters]]
+<infobox theme="character">
+  <title source="Title">
+    <default>{{PAGENAME}}</default>
+    <format>{{#invoke:CharacterInfobox|_getTitle
+      | Title           = {{{Title|}}}
+      | CurrentAlias    = {{{CurrentAlias|}}}
+      | CurrentAliasRef = {{{CurrentAliasRef|}}}
+      | RealName        = {{{RealName|}}}
+      | Death           = {{{Death|}}}
+      }}</format>
+  </title>
+  <image source="Image">
+    <caption source="ImageText">
+      <default>{{PAGENAME}}</default>
+    </caption>
+  </image>
+  <data source="Gallery">
+    <default>{{PAGENAME}}/Gallery</default>
+    <format>[[{{{Gallery}}}]]</format>
+  </data>
+  <data source="RealName">
+    
+  </data>
+</infobox>
+</includeonly>
+<noinclude>
+__TOC__
+{{Framework}}
+__NOEDITSECTION__
+{{{{FULLPAGENAME}}/Documentation}}
+[[Category:Templates]]
+[[Category:Page Templates]]
+</noinclude>
