@@ -1,9 +1,7 @@
-<includeonly>
-<!-- Initial Categorization -->[[Category:Characters]]
-<infobox theme="character">
+<!-- Initial Categorization --><infobox theme="character">
   <title source="Title">
     <default>{{PAGENAME}}</default>
-    <format>{{#invoke:CharacterInfobox|_getTitle
+    <format>{{#invoke:CharacterInfobox/sandbox|_getTitle
       | Title           = {{{Title|}}}
       | CurrentAlias    = {{{CurrentAlias|}}}
       | CurrentAliasRef = {{{CurrentAliasRef|}}}
@@ -21,15 +19,432 @@
     <format>[[{{{Gallery}}}]]</format>
   </data>
   <data source="RealName">
-    
+    <default>Unknown</default>
+    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Real Name}} Real Name</label>
+    <format>{{#invoke:CharacterInfobox/sandbox|_RealName
+      | Value       = Unknown
+      | ValueReal   = {{{RealName|}}}
+      | Value2      = {{{RealName2|}}}
+      | ValueRef    = {{{RealNameRef|}}}
+      }}</format>
   </data>
+  <data source="CurrentAlias">
+    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Current Alias}} Current Alias</label>
+    <format>{{#invoke:CharacterInfobox/sandbox|_CurrentAlias
+      | Value       = {{{CurrentAlias|}}}
+      | ValueRef    = {{{CurrentAliasRef|}}}
+      }}</format>
+  </data>
+  <data source="Aliases">
+    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Aliases}} Aliases</label>
+  </data>
+  <data source="EditorialNames">
+    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Editorial Names}} Editorial Names</label>
+  </data>
+  <data source="Relatives">
+    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Relatives}} Relatives</label>
+  </data>
+  <data source="Affiliation">
+    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Affiliation}} Affiliation</label>
+  </data>
+  <data source="BaseOfOperations">
+    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Base Of Operations}} Base Of Operations</label>
+  </data>
+  <data source="Custom">
+    <label>{{{CustomLabel|Label Needed!}}}</label>
+  </data>
+  <group>
+    <header>Status</header>
+    <data source="Alignment">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Alignment}} Alignment</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Alignment
+        | Value       = {{{Alignment|}}}
+        }}</format>
+    </data>
+    <data source="Identity">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Identity}} Identity</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Identity
+        | Value       = {{{Identity|}}}
+        | Value2      = {{{Identity2|}}}
+        }}</format>
+    </data>
+    <data source="Citizenship">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Citizenship}} Citizenship</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Citizenship
+        | Value       = {{{Citizenship|}}}
+        | Value2      = {{{Citizenship2|}}}
+        }}</format>
+    </data>
+    <data source="MaritalStatus">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Marital Status}} Marital Status</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_MaritalStatus
+        | Value       = {{{MaritalStatus|}}}
+        | Value2      = {{{MaritalStatus2|}}}
+        }}</format>
+    </data>
+    <data source="Occupation">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Occupation}} Occupation</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Occupation
+        | Value       = {{{Occupation|}}}
+        }}</format>
+    </data>
+    <data source="Education">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Education}} Education</label>
+    </data>
+  </group>
+  <group>
+    <header>Characteristics{{#if:{{{CharRef}}}|{{#tag:ref|{{{CharRef|}}}}}|}}</header>
+    <data source="Gender">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Gender}} Gender</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Gender
+        | Value       = {{{Gender|}}}
+        | Value2      = {{{Gender2|}}}
+        }}</format>
+    </data>
+    <data source="Height">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Height}} Height</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Height
+        | Value       = {{{Height|}}}
+        | Value2      = {{{Height2|}}}
+        }}</format>
+    </data>
+    <data source="Weight">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Weight}} Weight</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Weight
+        | Value       = {{{Weight|}}}
+        | Value2      = {{{Weight2|}}}
+        }}</format>
+    </data>
+    <data source="Eyes">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Eyes}} Eyes</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Eyes
+        | Value       = {{{Eyes|}}}
+        | Value2      = {{{Eyes2|}}}
+        }}</format>
+    </data>
+    <data source="Hair">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Hair}} Hair</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Hair
+        | Value       = {{{Hair|}}}
+        | Value2      = {{{Hair2|}}}
+        }}</format>
+    </data>
+    <data source="Skin">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Skin}} Skin</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Skin
+        | Value       = {{{UnusualSkinColour|}}}
+        | Value2      = {{{UnusualSkinColour2|}}}
+        }}</format>
+    </data>
+    <data source="UnusualFeatures">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Unusual Features}} Unusual Features</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_UnusualFeatures
+        | Value       = {{{UnusualFeatures|}}}
+        }}</format>
+    </data>
+  </group>
+  <group>
+    <header>Origin</header>
+    <data source="Origin">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Origin}} Origin</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Origin
+        | Value       = {{{Origin|}}}
+        }}</format>
+    </data>
+    <data source="Universe">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Universe}} Universe</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Universe
+        | Value       = {{{Universe|}}}
+        | Value2      = {{{Universe2|}}}
+        | ValueRef    = {{{UniverseRef|}}}
+        }}</format>
+    </data>
+    <data source="Sector">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Sector}} Sector</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Sector
+        | Value       = {{{Sector|}}}
+        }}</format>
+    </data>
+    <data source="Partner">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Partner}} Partner</label>
+    </data>
+    <data source="PlaceOfBirth">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Place of Birth}} Place of Birth</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Ctry
+        | Value       = {{{PlaceOfBirth|}}}
+        }}</format>
+    </data>
+    <data source="PlaceOfCreation">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Place of Creation}} Place of Creation</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Ctry
+        | Value       = {{{PlaceOfCreation|}}}
+        }}</format>
+    </data>
+    <data source="PlaceOfDeath">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Place of Death}} Place of Death</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Ctry
+        | Value       = {{{PlaceOfDeath|}}}
+        }}</format>
+    </data>
+    <data source="PlaceOfDestruction">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Place of Destruction}} Place of Destruction</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Ctry
+        | Value       = {{{PlaceOfDestruction|}}}
+        }}</format>
+    </data>
+    <data source="Creators">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Creators}} Creators</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_Creators
+        | Value       = {{{Creators|}}}
+        | Value2      = {{{Creators2|}}}
+        }}</format>
+    </data>
+    <data source="OriginalPublisher">
+      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Original Publisher}} Original Publisher</label>
+      <format>{{#invoke:CharacterInfobox/sandbox|_OriginalPublisher
+        | Value       = {{{OriginalPublisher|}}}
+        }}</format>
+    </data>
+  </group>
+  <group layout="horizontal">
+    <data source="First">
+      <label>First Appearance</label>
+      <format>{{#if: {{{First|}}}
+  | {{#if: {{#pos:{{{First}}}|Season}}
+      | {{Ed| {{{First|}}} }}
+      | {{#if: {{#pos:{{{First}}}|#}}{{#pos:{{{First}}}|Vol}}
+          | {{Cid|{{{First}}}}}
+          | {{{First|}}}
+          }}
+      }}{{#if: {{{First2|}}} | &nbsp;{{{First2}}} }}
+  | {{#if:{{{First2|}}}
+      |&nbsp;{{{First2}}}
+      | [[:Category:Character First Appearance Needed|Unknown]][[Category:Character First Appearance Needed]]
+      }}
+  }}</format>
+    </data>
+    <data source="Last">
+      <label>Last Appearance</label>
+      <format></format>
+    </data>
+    <data source="Death">
+      <label>Appearance of Death</label>
+      <format>{{#if: {{{Last|}}}{{{Death|}}}
+                        | {{#if: {{#pos:{{{Last|{{{Death|}}}}}}|Season}}
+                            | {{Ed|{{{Last|{{{Death|}}}}}}}}
+                            | {{#if: {{#pos:{{{Last|{{{Death|}}}}}}|#}}{{#pos:{{{Last|{{{Death|}}}}}}|Vol}}
+                                | {{Cid|{{{Last|{{{Death|}}}}}}}}
+                                | {{{Last|{{{Death|}}}}}}
+                                }}
+                            }}
+                        }}
+
+<!-- Era and Debut Year Categories, DPL use-->
+{{#if: {{#pos:{{{First|}}}|[}} {{#pos:{{{First|}}}|]}} {{#pos:{{{First|}}}|{{!}} }}
+  |
+  |{{#if: {{#pos:{{GetEraCat| {{GetYear| {{CnstNL| {{{First}}} }} }} }}|error}}
+     |
+     | {{GetEraCat| {{GetYear| {{CnstNL| {{{First|}}} }} }} |Characters}}
+       [[Category:{{GetYear| {{CnstNL| {{{First}}} }} }} Character Debuts]]
+   }}
+}}
+<!-- End Era and Debut Year Categories --></format>
+    </data>
+  </group>
 </infobox>
-</includeonly>
+<div style="float: right; clear:right;">{{InfoboxPromo}}</div><!-- #END OF INFOBOX
+
+
+-->{{#if: {{#pos:{{lc:{{SITENAME}}}}|dc}}
+  |{{#if: {{{Quotation|}}}{{{Speaker|}}}{{{QuoteSource|}}}
+     |{{QuoteWithCat | {{{Quotation}}} | {{#if: {{{Speaker|}}} | {{{Speaker}}} }} | {{#if: {{{QuoteSource|}}} | {{{QuoteSource}}} | [[Category:Quote Source Needed]] }} }}
+     |{{#if: {{{BlockQuote|}}}
+        | {{{BlockQuote}}}
+        }}
+     }}{{#if: {{{Overview|}}}
+         |{{{{SITENAME}}:Header|Header=Overview}}
+{{{Overview}}}
+         }}{{{{SITENAME}}:Header|Header={{{HistoryHeader|History}}}}}{{#if: {{{HistoryText|}}}
+      |{{{HistoryText}}}
+      |History of character is unknown.
+      }}{{#if: {{{Personality|}}} | {{{{SITENAME}}:Header|Header={{{PersonalityHeader|Personality}}}}}
+{{{Personality}}}
+
+      }}
+  |{{#if: {{{Overview|}}}
+     |{{{{SITENAME}}:Header|Header=Overview}}
+{{{Overview}}}
+     }}__TOC__{{{{SITENAME}}:Header|Header={{{HistoryHeader|History}}}}}{{#if: {{{Quotation|}}}{{{Speaker|}}}{{{QuoteSource|}}}
+  |{{QuoteWithCat | {{{Quotation}}} | {{#if: {{{Speaker|}}} | {{{Speaker}}} }} | {{#if: {{{QuoteSource|}}} | {{{QuoteSource}}} | [[Category:Quote Source Needed]] }} }}
+  |{{#if: {{{BlockQuote|}}}
+      | {{{BlockQuote}}}
+      }}
+  }}{{#if: {{{HistoryText|}}}
+      |{{#if: {{{Quotation|}}}{{{Speaker|}}}{{{QuoteSource|}}}{{{BlockQuote|}}} |&nbsp;}}
+{{{HistoryText}}}
+      |{{#if: {{{Quotation|}}}{{{Speaker|}}}{{{QuoteSource|}}}{{{BlockQuote|}}} |&nbsp;}}
+History of character is unknown.
+      }}
+  }}{{#if: {{{Personality|}}} | {{{{SITENAME}}:Header|Header={{{PersonalityHeader|Personality}}}}}
+{{{Personality}}}
+  }}{{#ifexist:{{PAGENAME}}/Power Grid |{{{{SITENAME}}:Header|Header={{{PowersAbilitiesHeader|Powers and Abilities}}}}}<div class="floatright">{{:{{PAGENAME}}/Power_Grid}}</div>| {{#if: {{{Powers|}}}{{{Abilities|}}}{{{Strength|}}}{{{Weaknesses|}}} | {{{{SITENAME}}:Header|Header={{{PowersAbilitiesHeader|Powers and Abilities}}}}} }}
+  }}
+{{#if: {{{Powers|}}} |<h3>Powers</h3>
+{{{Powers}}} }}
+{{#if: {{{Abilities|}}} |<h3>Abilities</h3>
+{{{Abilities}}} }}
+{{#if: {{{Strength|}}} |<h3>Strength level</h3>
+{{{Strength}}} }}
+{{#if: {{{Weaknesses|}}} |<h3>Weaknesses</h3>
+{{{Weaknesses}}} }}
+
+{{#if:{{{ParaphernaliaHeader|}}}{{{Equipment|}}}{{{Transportation|}}}{{{Weapons|}}}|{{{{SITENAME}}:Header|Header={{{ParaphernaliaHeader|Paraphernalia}}}}}
+{{#if: {{{Equipment|}}} |<h3>Equipment</h3>
+{{{Equipment}}} }}
+{{#if: {{{Transportation|}}} |<h3>Transportation</h3>
+{{{Transportation}}} }}
+{{#if: {{{Weapons|}}} |<h3>Weapons</h3>
+{{{Weapons}}} }}
+
+}}{{#if:{{{Theme|}}}
+  | {{#switch: {{lc:{{{Theme|}}}}}
+      | green lantern = {{{{SITENAME}}:Header|Header={{{OathHeader|Oath}}}}}
+{{#if: {{{Oath|}}} | {{{Oath}}} | Oath unknown. }}
+
+      }}
+  }}{{#if: {{{NotesHeader|}}}{{{Notes|}}} |{{{{SITENAME}}:Header|Header={{{NotesHeader|Notes}}}}}
+{{{Notes}}}
+
+}}{{#if: {{{Trivia|}}} |{{{{SITENAME}}:Header|Header={{{TriviaHeader|Trivia}}}}}
+{{{Trivia}}}
+
+}}{{#if: {{{OtherMedia|}}} |{{{{SITENAME}}:Header|Header={{{OtherMediaHeader|Appearances in Other Media}}}}}
+{{{OtherMedia}}}
+
+}}{{#if: {{{CustomSection1|}}} |{{{{SITENAME}}:Header|Header={{{CustomSection1}}}}}
+{{{CustomText1}}}
+
+}}{{#if: {{{CustomSection2|}}} |{{{{SITENAME}}:Header|Header={{{CustomSection2}}}}}
+{{{CustomText2}}}
+
+}}{{#if: {{{RecommendedHeader|}}}{{{Recommended|}}} |{{{{SITENAME}}:Header|Header={{{RecommendedHeader|Recommended Reading}}}}}
+{{#if: {{{Recommended|}}} | {{{Recommended}}} | * None. }}
+}}
+
+<h2 class="add-section-edit-link" id="Links-Header">{{{LinksHeader|Links and References}}}<span class="editsection">[{{fullurl:{{FULLPAGENAME}}|action=edit}} <span class="sprite edit-pencil"></span>]</span></h2>
+* [[:Category:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Appearances|{{#ifeq:{{PAGESINCAT:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Appearances}}|0| |{{PAGESINCAT:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Appearances}}}} Appearances of {{PAGENAME}}]]
+* [[:Category:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Mentions|Media {{PAGENAME}} was Mentioned in]]
+* [[:Category:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Images|{{#ifeq:{{PAGESINCAT:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Images}}|0| |{{PAGESINCAT:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Images}}}} Images featuring {{PAGENAME}}]]
+* [[:Category:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Quotes|{{#ifeq:{{PAGESINCAT:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Quotes}}|0| |{{PAGESINCAT:{{#if:{{{PageTitle|}}}|{{{PageTitle}}}|{{PAGENAME}}}}/Quotes}}}} Quotations by or about {{PAGENAME}}]]
+* [[{{PAGENAME}}/Gallery|Character Gallery: {{PAGENAME}}]]
+* [[{{PAGENAME}}/Fan Art|Fan-Art Gallery: {{PAGENAME}}]]{{#if: {{{Marvel|}}} |&nbsp;
+* <span class="plainlinks">[http://www.marvel.com/universe/{{{marvel}}} {{PAGENAME}} at Marvel.com]</span> }}{{#if: {{{DC|}}} |&nbsp;
+* [http://www.dccomics.com/heroes_and_villains/?hv=origin_stories/{{{DC}}} {{#if: {{{CurrentAlias|}}}|{{#replace: {{#replace: {{{CurrentAlias}}} | {{OpenBrackets}} | }} | {{CloseBrackets}} | }}|{{PAGENAME}}}} at DCComics.com]}}{{#if: {{{Wikipedia|}}} |&nbsp;
+* [[Wikipedia:{{{Wikipedia}}}|{{PAGENAME}} at Wikipedia.org]] }}{{#if:{{{Comicvine|}}} |&nbsp;
+* <span class="plainlinks">[http://www.comicvine.com/{{{Comicvine}}} {{PAGENAME}} at Comicvine.com]</span> }}{{#ifexpr: {{PAGESINCAT:Killed by {{{CurrentAlias|}}} }} > 0 |&nbsp;
+* [[:Category:Killed by {{{CurrentAlias|}}}|Characters killed by {{{CurrentAlias|}}}]] }}{{#if: {{{Links|}}} |&nbsp;
+{{{Links}}} }}
+
+==={{{DiscoverAndDiscussHeader|Discover and Discuss}}}===
+* Search this site for: <span class="plainlinks">{{#if: {{{CurrentAlias|}}} | {{#if: {{#pos: {{{CurrentAlias|}}} | [}} || [http://{{lc:{{#replace:{{SITENAME}}|Database}}}}.wikia.com/index.php?title=Special%3ASearch&redirs=0&search={{#replace:{{#replace:{{{CurrentAlias}}}|"|%22}}| |%20}}&fulltext=Search&ns0=1&ns1=1&ns2=1&ns3=1&ns4=1&ns5=1&ns6=1&ns7=1&ns8=1&ns9=1&ns10=1&ns11=1&ns12=1&ns13=1&ns14=1&ns1 {{{CurrentAlias}}}] · }} }} {{#if: {{{RealName|}}} | {{#if: {{#pos: {{{RealName|}}} | [}} || [http://{{lc:{{#replace:{{SITENAME}}|Database}}}}.wikia.com/index.php?title=Special%3ASearch&redirs=0&search={{#replace:{{#replace:{{{RealName}}}|"|%22}}| |%20}}&fulltext=Search&ns0=1&ns1=1&ns2=1&ns3=1&ns4=1&ns5=1&ns6=1&ns7=1&ns8=1&ns9=1&ns10=1&ns11=1&ns12=1&ns13=1&ns14=1&ns1 {{{RealName}}}] · }} }} [http://{{lc:{{#replace:{{SITENAME}}|Database}}}}.wikia.com/index.php?title=Special%3ASearch&redirs=0&search={{#replace:{{#replace:{{PAGENAMEE}}|"|%22}}| |%20}}&fulltext=Search&ns0=1&ns1=1&ns2=1&ns3=1&ns4=1&ns5=1&ns6=1&ns7=1&ns8=1&ns9=1&ns10=1&ns11=1&ns12=1&ns13=1&ns14=1&ns1 {{PAGENAME}}]</span>
+
+===Footnotes===
+{{reflist|2}}
+
+
+{{FollowUs}}
+__NOEDITSECTION__<!--
+
+Finish Categorization
+
+
+Event Participant
+-->{{#if: {{{Event|}}} | [[Category:{{{Event}}}]] }}<!--
+
+
+Image Needed
+-->{{#if: {{{Image|}}} |{{#ifexist: File:{{{Image}}} | | [[Category:Character Image Correction Needed]]}}| [[Category:Character Image Needed]][[Category:Image Needed]]}}<!--
+
+
+Creators Needed
+-->{{#if: {{{Creators|}}} | | [[Category:Character Creators Needed]]}}<!--
+
+
+History Needed, Wikify
+-->{{#if: {{{HistoryText|}}} | {{#if: {{#pos:{{{HistoryText}}}|[}}||[[Category:Wikify]]}} | [[Category:Character History Needed]]}}<!--
+
+
+Sub Pages Needed
+-->{{#ifexist: Category:{{PAGENAME}}/Appearances | | {{#ifexpr: {{PAGESINCAT:{{PAGENAME}}/Appearances}} > 0 | [[Category:Appearances Category Needed]] }} }}{{#ifexist: Category:{{PAGENAME}}/Images | | {{#ifexpr: {{PAGESINCAT:{{PAGENAME}}/Images}} > 0 | [[Category:Images Category Needed]] }} }}{{#ifexist: Category:{{PAGENAME}}/Quotes | | {{#ifexpr: {{PAGESINCAT:{{PAGENAME}}/Quotes}} > 0 | [[Category:Quotes Page Needed]] }} }}{{#ifexist: {{PAGENAME}}/Gallery | | [[Category:Gallery Page Needed]] }}<!--
+
+
+OtherMedia Filled In
+-->{{#if:{{{OtherMedia|}}}|[[Category:OtherMedia Field Filled Out]]}}<!--
+
+-->
 <noinclude>
 __TOC__
 {{Framework}}
 __NOEDITSECTION__
 {{{{FULLPAGENAME}}/Documentation}}
-[[Category:Templates]]
-[[Category:Page Templates]]
 </noinclude>

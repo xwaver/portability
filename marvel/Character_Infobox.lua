@@ -2,6 +2,10 @@ local CharacterInfobox={}
 
 local HF = require("Module:HF")
 local getArgs = require('Dev:Arguments').getArgs
+
+-- Since this should only be evaluated once per pageview, it's now global
+_G.vars = { Pagename = mw.title.getCurrentTitle().text }
+
 local function transition(funcName)
   -- This module's initial functions were made using InfoboxBuilder.
   -- As a result, most of them can't be invoked for Portable Infoboxes.
@@ -143,50 +147,60 @@ end
 --[[
 ---- PUBLIC METHODS
 ]]--
--- Given how frequently these Infobox Line functions are called,
--- they probably should migrate to Module:HF.
-function CharacterInfobox.Line-Label (frame)
-
-end
-
+local vars = {}
 -- These are the invocation-friendly calls.
 -- These are backward from the normal '_' order, for legacy purposes.
-local vars.Pagename = mw.title.getCurrentTitle().text
-CharacterInfobox._InfoButton = makeInvokeFunc('InfoButton')
-CharacterInfobox._getTitle = makeInvokeFunc('getTitle')
-CharacterInfobox._MainImage = makeInvokeFunc('MainImage')
-CharacterInfobox._MainImageLabel = makeInvokeFunc('MainImageLabel')
-CharacterInfobox._RealName = makeInvokeFunc('RealName')
-CharacterInfobox._CurrentAlias = makeInvokeFunc('CurrentAlias')
-CharacterInfobox._Alignment = makeInvokeFunc('Alignment')
-CharacterInfobox._Identity = makeInvokeFunc('Identity')
-CharacterInfobox._Citizenship = makeInvokeFunc('Citizenship')
-CharacterInfobox._MaritalStatus = makeInvokeFunc('MaritalStatus')
-CharacterInfobox._Occupation = makeInvokeFunc('Occupation')
-CharacterInfobox._Characteristics = makeInvokeFunc('Characteristics')
-CharacterInfobox._Gender = makeInvokeFunc('Gender')
-CharacterInfobox._Height = makeInvokeFunc('Height')
-CharacterInfobox._Weight = makeInvokeFunc('Weight')
-CharacterInfobox._Eyes = makeInvokeFunc('Eyes')
-CharacterInfobox._Hair = makeInvokeFunc('Hair')
-CharacterInfobox._Skin = makeInvokeFunc('Skin')
-CharacterInfobox._UnusualFeatures = makeInvokeFunc('UnusualFeatures')
-CharacterInfobox._Origin = makeInvokeFunc('Origin')
-CharacterInfobox._Universe = makeInvokeFunc('Universe')
-CharacterInfobox._Sector = makeInvokeFunc('Sector')
-CharacterInfobox._Ctry = makeInvokeFunc('Ctry')
-CharacterInfobox._Creators = makeInvokeFunc('Creators')
-CharacterInfobox._OriginalPublisher = makeInvokeFunc('OriginalPublisher')
+vars.Pagename = mw.title.getCurrentTitle().text
+CharacterInfobox._InfoButton = transition('InfoButton')
+CharacterInfobox._InfoIcon = transition('InfoIcon')
+CharacterInfobox._getTitle = transition('getTitle')
+CharacterInfobox._MainImage = transition('MainImage')
+CharacterInfobox._MainImageLabel = transition('MainImageLabel')
+CharacterInfobox._RealName = transition('RealName')
+CharacterInfobox._CurrentAlias = transition('CurrentAlias')
+CharacterInfobox._Alignment = transition('Alignment')
+CharacterInfobox._Identity = transition('Identity')
+CharacterInfobox._Citizenship = transition('Citizenship')
+CharacterInfobox._MaritalStatus = transition('MaritalStatus')
+CharacterInfobox._Occupation = transition('Occupation')
+CharacterInfobox._Characteristics = transition('Characteristics')
+CharacterInfobox._Gender = transition('Gender')
+CharacterInfobox._Height = transition('Height')
+CharacterInfobox._Weight = transition('Weight')
+CharacterInfobox._Eyes = transition('Eyes')
+CharacterInfobox._Hair = transition('Hair')
+CharacterInfobox._Skin = transition('Skin')
+CharacterInfobox._UnusualFeatures = transition('UnusualFeatures')
+CharacterInfobox._Origin = transition('Origin')
+CharacterInfobox._Universe = transition('Universe')
+CharacterInfobox._Sector = transition('Sector')
+CharacterInfobox._Ctry = transition('Ctry')
+CharacterInfobox._Creators = transition('Creators')
+CharacterInfobox._OriginalPublisher = transition('OriginalPublisher')
+
+function CharacterInfobox.InfoIcon( field )
+	if HF.isempty( field.buttonsize ) then field.buttonsize = "10px" end
+	local link = string.format(
+		"[[File:Information-silk.png|%s|link=Click here for help with this field#%s]]",
+		field.buttonsize,
+		field.Label
+	)
+	return link
+end
 
 function CharacterInfobox.InfoButton( field, vars )
   if HF.isempty( field.buttonsize ) then field.buttonsize = "10px" end
--- ~FishTank/TODO: mw.html.create
-  local output = '<span style="line-height:normal; float:left; position:relative; top:4px;">'
-  output = output .. '[[File:Information-silk.png|' .. field.buttonsize
-  output = output .. '|link=Click here for help with this field#' .. field.Label .. ']]'
-  output = output .. '</span><span style="float: left; position: relative; left: 5px;">' .. field.Label .. '</span>'
-
-  return output
+	local link = string.format(
+		"[[File:Information-silk.png|%s|link=Click here for help with this field#%s]]",
+		field.buttonsize,
+		field.Label
+	)
+	local out = mw.html.create('span')
+		:css('line-height','normal'):css('float','left'):css('position','relative'):css('top','4px')
+		:wikitext(link):done()
+		:tag('span'):css('float','left'):css('position','relative'):css('left','5px')
+		:wikitext(field.Label):done()
+  return tostring(out)
 end
 
 function CharacterInfobox.getTitle( field, vars )
@@ -297,18 +311,14 @@ end
 
 function CharacterInfobox.Citizenship( field, vars )
   local ctznTable    = require('Module:Citizenship')
+	local output = ""
 
-  local citizenships  = HF.explode( ",", field.Value)
-  local citizenships2 = HF.explode( ",", field.Value2)
-
-  local output = ""
-
-  if not HF.isempty( citizenships ) then
-    output = output .. CitizenshipCheck( citizenships, ctznTable )
+  if not HF.isempty( field.Value ) then
+    output = output .. CitizenshipCheck( HF.explode( ",", field.Value), ctznTable )
   end
 
-  if not HF.isempty( citizenships2 ) then
-    output = output .. CitizenshipCheck( citizenships2, ctznTable )
+  if not HF.isempty( field.Value2 ) then
+    output = output .. CitizenshipCheck( HF.explode( ",", field.Value2), ctznTable )
   end
 
   if string.sub( output, -2, -1 ) == ", " then
@@ -335,7 +345,7 @@ function CharacterInfobox.MaritalStatus( field, vars )
     end
   end
 
-  output = output .. " " .. field.Value2
+  output = output .. " " .. field.Value2 or ''
 
   return output
 end
@@ -365,7 +375,7 @@ end
 
 function CharacterInfobox.Gender( field, vars )
   local category = field.Value .. " Characters"
-  return HF.CategoryLink( category, vars.Pagename, field.Value ) .. field.Value2
+  return HF.CategoryLink( category, vars.Pagename, field.Value ) .. field.Value2 or ''
 end
 
 function CharacterInfobox.Height( field, vars )
@@ -420,10 +430,10 @@ function CharacterInfobox.Height( field, vars )
       output = output .. HF.CategoryLink( inchesCategory, vars.Pagename, "" )
 
       -- Concat Height2
-      output = output .. " " .. field.Value2
+      output = output .. " " .. field.Value2 or ''
 
     else
-      output = field.Value .. " " .. field.Value2
+      output = field.Value .. " " .. field.Value2 or ''
     end
 
   return output
@@ -466,9 +476,9 @@ function CharacterInfobox.Weight( field, vars )
 
     output = output .. HF.CategoryLink( "Weight", "Weight " .. weightLbs, "" )
 
-    output = output .. " " .. field.Value2
+    output = output .. " " .. field.Value2 or ''
   else
-    output = field.Value .. " " .. field.Value2
+    output = field.Value .. " " .. field.Value2 or ''
   end
 
   return output
@@ -504,7 +514,7 @@ function CharacterInfobox.Skin( field, vars )
       output = output .. HF.CategoryLink( skin .. " Skin", vars.Pagename, skin )
     end
 
-    output = output .. field.Value2
+    output = output .. field.Value2 or ''
   return output
 end
 
@@ -553,7 +563,7 @@ function CharacterInfobox.Universe( field, vars )
   end
 
   if not HF.isempty( field.Value2 ) then
-    output = output .. " " .. field.Value2
+    output = output .. " " .. field.Value2 or ''
   end
 
   if not HF.isempty( field.ValueRef ) then
@@ -613,7 +623,7 @@ local output = ""
     output = string.sub( output, 1, -2 ) -- Remove last comma
   end
 
-  output = output .. " " .. field.Value2
+  output = output .. " " .. field.Value2 or ''
 return output
 end
 
