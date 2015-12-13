@@ -1,0 +1,136 @@
+<!-- BEGIN INFOBOX, BEGIN EPISODE INFO AND COVER IMAGE -->
+<infobox>
+<title><default></default></title>
+</infobox>
+<div class="infobox" style="width:300px; float:right; clear:none; margin:0 0 1em 1em; border:1px solid {{Theme.Default.Border}}; background:{{Theme.Default.BG}}; border-radius:10px; padding:10px;"><!--
+
+
+Little Help Icon
+--><span style="position:relative; float:right; font-size:70%;">[[File:Information-silk.png|link=Marvel Database:Episode Template#Usage|Episode Template Help]]</span><!--
+
+
+Event/Title/Image Area
+--><div style="text-align:center; font-size:16px; font-weight:900; line-height:1.5em;"><!--
+
+Event1/2
+-->{{#if:{{{Event2|}}} |<div style="text-align:center;font-size:10px;font-weight:900;line-height:1em;">Part of the [[{{{Event}}}]], and [[{{{Event2}}}]] events</div>|{{#if:{{{Event|}}} |<div style="text-align:center;font-size:10px;font-weight:900;line-height:1em;">Part of the [[{{{Event}}}]] event</div>|}}}}<!--
+
+
+Title
+-->{{#if: {{{HeadTitle|}}} | {{{HeadTitle}}} | {{#if: {{{EpisodeTitle|}}} | {{#if:{{#pos:{{{EpisodeTitle}}}|"}}|{{{EpisodeTitle}}}|"{{{EpisodeTitle}}}"}} }} }}<!--
+
+Br
+--><div style="text-align:center;font-size:10px;font-weight:900;line-height:1em;"><br /></div>
+<!--
+
+Images/Videos
+--><div style="text-align:center; font-size:14px;">{{#if:{{{Video|}}} | [[Video:{{{Video}}}|thumb|295px|{{#if: {{{Gallery|}}} |[[{{{Gallery}}}|Gallery]]|[[{{{SeriesTitle|{{#explode:{{PAGENAME}}|Season|0}}}}}/Gallery|Gallery]]}} ]] | {{#if:{{{Image|}}} | [[File:{{{Image}}}|{{{ImageSize|300px}}}|center|{{#if:{{{ImageText|}}}|{{{ImageText}}}|{{{Image}}}}}]]<div style="text-align:center; font-size:14px;">{{#ifexist: {{{Gallery|}}} | [[{{{Gallery}}}|Gallery]]<br />| {{#ifexist:{{{SeriesTitle|{{#explode:{{PAGENAME}}|Season|0}}}}}/Gallery|[[{{{SeriesTitle|{{#explode:{{PAGENAME}}|Season|0}}}}}/Gallery|Gallery]]<br /> }} }}</div> }} }}</div>
+<!--
+
+BEGIN Subsequent Videos
+-->{{#if:{{{Video2|}}}{{{Video3|}}}|
+{{#if:{{{Video2|}}}|
+<div class="NavFrame collapsed" style="border:none;">
+<div class="NavHead" style="float: right; text-align: right; background-color: Transparent; font-size: 9px; width: 100%; margin-left: -18%;"></div>
+<div class="nocollapse" style="font-size:12px;">Part 2:</div>
+<div class="NavContent" style="text-align:center;">
+[[Video:{{{Video2}}}|thumb|295px|right]]
+</div>
+</div>
+}}{{#if:{{{Video3|}}}|
+<div class="NavFrame collapsed" style="border:none; clear:all;">
+<div class="NavHead" style="float: right; text-align: right; background-color: Transparent; font-size: 9px; width: 100%; margin-left: -18%;"></div>
+<div class="nocollapse" style="font-size:12px;">Part 3:</div>
+<div class="NavContent" style="text-align:center;">
+[[Video:{{{Video3}}}|thumb|295px|right]]
+</div>
+</div>
+}}
+
+}}<!--
+
+
+END Subsequent Videos
+--></div><!--
+
+
+Series Title
+--><div style="clear:left;font-size:10px;text-align:center;border-top:2px solid #B5B7CF;">
+<div style="font-size:12px;text-align:center;line-height:2em;">{{#if: {{{SeriesTitle|{{#explode:{{PAGENAME}}|Season|0}}}}} | {{#if: {{{Season|{{#explode:{{#explode:{{PAGENAME}}|Season|1}}| |0}}}}} | [[{{{SeriesTitle|{{#explode:{{PAGENAME}}|Season|0}}}}}#Season {{{Season|{{#explode:{{#explode:{{PAGENAME}}|Season|1}}| |0}}}}}|{{{SeriesTitle|{{#explode:{{PAGENAME}}|Season|0}}}}} Season {{{Season|{{#explode:{{#explode:{{PAGENAME}}|Season|1}}| |0}}}}}]] | [[{{{SeriesTitle|{{#explode:{{PAGENAME}}|Season|0}}}}}#Season 1|{{{SeriesTitle|{{#explode:{{PAGENAME}}|Season|0}}}}} Season 1]] }} }} {{#if: {{{Episode|{{#explode:{{#explode:{{PAGENAME}}|Season|1}}| |1}}}}} | <nowiki> #</nowiki>{{{Episode|{{#explode:{{#explode:{{PAGENAME}}|Season|1}}| |1}}}}} }}<br />{{#if:{{{Month|}}} | {{#if:{{{Year|}}} | [[:Category:{{{Year}}}, {{Month|{{{Month}}}}}|{{Month|{{{Month}}}}}{{#if:{{{Day|}}}|&nbsp;{{{Day}}}}}]],<nowiki> </nowiki> | {{Month|{{{Month}}}}} }} }}{{#if:{{{Year|}}} |[[:Category:{{{Year}}}|{{{Year}}}]] }}</div></div><!--
+
+-->{{#if: {{{EpisodeTitle|}}} |{{Infobox Line
+| width  = 110px
+| widthr = 190px
+| left   = {{InfoButton | Episode Title }}
+| right  = {{#if:{{#pos:{{{EpisodeTitle}}}|"}}|{{{EpisodeTitle}}}|"{{{EpisodeTitle}}}"}}
+}} }}<!--
+
+-->{{#if: {{{Director|}}} |{{Infobox Line
+| width  = 110px
+| widthr = 190px
+| left   = {{InfoButton | [[:Category:Directors|Director]] }}
+| right  = [[{{{Director}}}]] [[Category:{{{Director}}}/Director]]
+}} }}<!--
+
+-->{{#if: {{{Writer1_1|}}}{{{Writer1_2|}}}{{{Writer1_3|}}}{{{Writer1_4|}}}{{{Writer1_5|}}} |{{Infobox Line
+| width  = 110px
+| widthr = 190px
+| left   = {{InfoButton | [[:Category:Writers|Writers]] }}
+| right  = {{#if: {{{Writer1_1|}}} |[[{{{Writer1_1}}}]] [[Category:{{{Writer1_1}}}/Writer]]}}{{#if: {{{Writer1_2|}}} |, [[{{{Writer1_2}}}]] [[Category:{{{Writer1_2}}}/Writer]]}}{{#if: {{{Writer1_3|}}} |, [[{{{Writer1_3}}}]] [[Category:{{{Writer1_3}}}/Writer]]}}{{#if: {{{Writer1_4|}}} |, [[{{{Writer1_4}}}]] [[Category:{{{Writer1_4}}}/Writer]]}}{{#if: {{{Writer1_5|}}} |, [[{{{Writer1_5}}}]] [[Category:{{{Writer1_5}}}/Writer]]}}
+}} }}<!--
+
+-->{{#if: {{{Producer1_1|}}}{{{Producer1_2|}}}{{{Producer1_3|}}}{{{Producer1_4|}}}{{{Producer1_5|}}} |{{Infobox Line
+| width  = 110px
+| widthr = 190px
+| left   = {{InfoButton | [[:Category:Producers|Producers]] }}
+| right  = {{#if: {{{Producer1_1|}}} |{{{Producer1_1}}} }}{{#if: {{{Producer1_2|}}} |, {{{Producer1_2}}}}}{{#if: {{{Producer1_3|}}} |, {{{Producer1_3}}}}}{{#if: {{{Producer1_4|}}} |, {{{Producer1_4}}}}}{{#if: {{{Producer1_5|}}} |, {{{Producer1_5}}}}}
+}} }}<!--
+
+-->{{#if: {{{CustomRole1_1|}}} |{{Infobox Line
+| width  = 110px
+| widthr = 190px
+| left   = {{InfoButton | {{{CustomRole1_1}}} }}
+| right  = {{{CustomMembers1_1}}}
+}} }}<!--
+
+-->{{#if: {{{CustomRole1_2|}}} |{{Infobox Line
+| width  = 110px
+| widthr = 190px
+| left   = {{InfoButton | {{{CustomRole1_2}}} }}
+| right  = {{{CustomMembers1_2}}}
+}} }}<!--
+
+
+END EPISODE INFO AND IMAGE, BEGIN GENERAL CONTRIBUTORS
+-->{{Infobox Previous-Next
+| totalwidth  = 300
+| leftheader  = Previous Episode
+| lefttext    = {{#if: {{{PreviousEpisode|}}}
+  | {{#switch: {{{PreviousEpisode}}}
+      | - | -- | --- = &mdash;
+      | {{ed| {{{PreviousEpisode}}} }}
+      }}
+  | {{#ifeq: {{#explode:{{#explode:{{PAGENAME}}|Season|1}}| |1}} |1
+      |&mdash;
+      | {{ed| {{#explode:{{PAGENAME}}| Season}} Season {{#explode:{{#explode:{{PAGENAME}}|Season|1}}| }} {{#expr:{{#explode:{{#explode:{{PAGENAME}}|Season|1}}| |1}}-1}} }}
+      }}
+  }}
+| rightheader = Next Episode
+| righttext   = {{#if: {{{NextEpisode|}}}
+  | {{#switch: {{{NextEpisode}}}
+      | - | -- | --- = &mdash;
+      | {{ed| {{{NextEpisode}}} }}
+      }}
+  | {{ed| {{#explode:{{PAGENAME}}| Season}} Season {{#explode:{{#explode:{{PAGENAME}}|Season|1}}| }} {{#expr:{{#explode:{{#explode:{{PAGENAME}}|Season|1}}| |1}}+1}} }}
+  }}
+}}<!--
+
+
+END PREVIOUS/NEXT Episode, End Infobox (newlines are on purpose) -->
+</div>
+<!--
+
+
+
+END INFOBOX, BEGIN QUOTATION
+-->
