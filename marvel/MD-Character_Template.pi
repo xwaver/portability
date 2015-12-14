@@ -1,29 +1,28 @@
-<!-- Initial Categorization --><infobox theme="character">
+<includeonly><infobox theme="character">
   <title source="Title">
-    <default>{{PAGENAME}}</default>
-    <format>{{#invoke:CharacterInfobox/sandbox|_getTitle
+    <default>{{#invoke:CharacterInfobox|_getTitle
       | Title           = {{{Title|}}}
       | CurrentAlias    = {{{CurrentAlias|}}}
       | CurrentAliasRef = {{{CurrentAliasRef|}}}
       | RealName        = {{{RealName|}}}
       | Death           = {{{Death|}}}
-      }}</format>
+      }}</default>
   </title>
   <image source="Image">
-    <caption source="ImageText">
-      <default>{{PAGENAME}}</default>
+    <caption source="Gallery">
+    <default>[[{{PAGENAME}}/Gallery]]</default>
+    <format>{{#invoke:CharacterInfobox|_MainImageLabel
+      | Gallery       = {{{Gallery|}}}
+      | Label         = Gallery
+      }}</format>
     </caption>
   </image>
-  <data source="Gallery">
-    <default>{{PAGENAME}}/Gallery</default>
-    <format>[[{{{Gallery}}}]]</format>
-  </data>
   <data source="RealName">
     <default>Unknown</default>
-    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+    <label>{{#invoke:CharacterInfobox|_InfoIcon
       | buttonsize = {{{buttonsize|10px}}}
       | Label = Real Name}} Real Name</label>
-    <format>{{#invoke:CharacterInfobox/sandbox|_RealName
+    <format>{{#invoke:CharacterInfobox|_RealName
       | Value       = Unknown
       | ValueReal   = {{{RealName|}}}
       | Value2      = {{{RealName2|}}}
@@ -31,36 +30,36 @@
       }}</format>
   </data>
   <data source="CurrentAlias">
-    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+    <label>{{#invoke:CharacterInfobox|_InfoIcon
       | buttonsize = {{{buttonsize|10px}}}
       | Label = Current Alias}} Current Alias</label>
-    <format>{{#invoke:CharacterInfobox/sandbox|_CurrentAlias
+    <format>{{#invoke:CharacterInfobox|_CurrentAlias
       | Value       = {{{CurrentAlias|}}}
       | ValueRef    = {{{CurrentAliasRef|}}}
       }}</format>
   </data>
   <data source="Aliases">
-    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+    <label>{{#invoke:CharacterInfobox|_InfoIcon
       | buttonsize = {{{buttonsize|10px}}}
       | Label = Aliases}} Aliases</label>
   </data>
   <data source="EditorialNames">
-    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+    <label>{{#invoke:CharacterInfobox|_InfoIcon
       | buttonsize = {{{buttonsize|10px}}}
       | Label = Editorial Names}} Editorial Names</label>
   </data>
   <data source="Relatives">
-    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+    <label>{{#invoke:CharacterInfobox|_InfoIcon
       | buttonsize = {{{buttonsize|10px}}}
       | Label = Relatives}} Relatives</label>
   </data>
   <data source="Affiliation">
-    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+    <label>{{#invoke:CharacterInfobox|_InfoIcon
       | buttonsize = {{{buttonsize|10px}}}
       | Label = Affiliation}} Affiliation</label>
   </data>
   <data source="BaseOfOperations">
-    <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+    <label>{{#invoke:CharacterInfobox|_InfoIcon
       | buttonsize = {{{buttonsize|10px}}}
       | Label = Base Of Operations}} Base Of Operations</label>
   </data>
@@ -70,50 +69,50 @@
   <group>
     <header>Status</header>
     <data source="Alignment">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Alignment}} Alignment</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Alignment
+      <format>{{#invoke:CharacterInfobox|_Alignment
         | Value       = {{{Alignment|}}}
         }}</format>
     </data>
     <data source="Identity">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Identity}} Identity</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Identity
+      <format>{{#invoke:CharacterInfobox|_Identity
         | Value       = {{{Identity|}}}
         | Value2      = {{{Identity2|}}}
         }}</format>
     </data>
     <data source="Citizenship">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Citizenship}} Citizenship</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Citizenship
+      <format>{{#invoke:CharacterInfobox|_Citizenship
         | Value       = {{{Citizenship|}}}
         | Value2      = {{{Citizenship2|}}}
         }}</format>
     </data>
     <data source="MaritalStatus">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Marital Status}} Marital Status</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_MaritalStatus
+      <format>{{#invoke:CharacterInfobox|_MaritalStatus
         | Value       = {{{MaritalStatus|}}}
         | Value2      = {{{MaritalStatus2|}}}
         }}</format>
     </data>
     <data source="Occupation">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Occupation}} Occupation</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Occupation
+      <format>{{#invoke:CharacterInfobox|_Occupation
         | Value       = {{{Occupation|}}}
         }}</format>
     </data>
     <data source="Education">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Education}} Education</label>
     </data>
@@ -121,64 +120,64 @@
   <group>
     <header>Characteristics{{#if:{{{CharRef}}}|{{#tag:ref|{{{CharRef|}}}}}|}}</header>
     <data source="Gender">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Gender}} Gender</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Gender
+      <format>{{#invoke:CharacterInfobox|_Gender
         | Value       = {{{Gender|}}}
         | Value2      = {{{Gender2|}}}
         }}</format>
     </data>
     <data source="Height">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Height}} Height</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Height
+      <format>{{#invoke:CharacterInfobox|_Height
         | Value       = {{{Height|}}}
         | Value2      = {{{Height2|}}}
         }}</format>
     </data>
     <data source="Weight">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Weight}} Weight</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Weight
+      <format>{{#invoke:CharacterInfobox|_Weight
         | Value       = {{{Weight|}}}
         | Value2      = {{{Weight2|}}}
         }}</format>
     </data>
     <data source="Eyes">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Eyes}} Eyes</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Eyes
+      <format>{{#invoke:CharacterInfobox|_Eyes
         | Value       = {{{Eyes|}}}
         | Value2      = {{{Eyes2|}}}
         }}</format>
     </data>
     <data source="Hair">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Hair}} Hair</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Hair
+      <format>{{#invoke:CharacterInfobox|_Hair
         | Value       = {{{Hair|}}}
         | Value2      = {{{Hair2|}}}
         }}</format>
     </data>
     <data source="Skin">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Skin}} Skin</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Skin
+      <format>{{#invoke:CharacterInfobox|_Skin
         | Value       = {{{UnusualSkinColour|}}}
         | Value2      = {{{UnusualSkinColour2|}}}
         }}</format>
     </data>
     <data source="UnusualFeatures">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Unusual Features}} Unusual Features</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_UnusualFeatures
+      <format>{{#invoke:CharacterInfobox|_UnusualFeatures
         | Value       = {{{UnusualFeatures|}}}
         }}</format>
     </data>
@@ -186,82 +185,82 @@
   <group>
     <header>Origin</header>
     <data source="Origin">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Origin}} Origin</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Origin
+      <format>{{#invoke:CharacterInfobox|_Origin
         | Value       = {{{Origin|}}}
         }}</format>
     </data>
     <data source="Universe">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Universe}} Universe</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Universe
+      <format>{{#invoke:CharacterInfobox|_Universe
         | Value       = {{{Universe|}}}
         | Value2      = {{{Universe2|}}}
         | ValueRef    = {{{UniverseRef|}}}
         }}</format>
     </data>
     <data source="Sector">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Sector}} Sector</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Sector
+      <format>{{#invoke:CharacterInfobox|_Sector
         | Value       = {{{Sector|}}}
         }}</format>
     </data>
     <data source="Partner">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Partner}} Partner</label>
     </data>
     <data source="PlaceOfBirth">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Place of Birth}} Place of Birth</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Ctry
+      <format>{{#invoke:CharacterInfobox|_Ctry
         | Value       = {{{PlaceOfBirth|}}}
         }}</format>
     </data>
     <data source="PlaceOfCreation">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Place of Creation}} Place of Creation</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Ctry
+      <format>{{#invoke:CharacterInfobox|_Ctry
         | Value       = {{{PlaceOfCreation|}}}
         }}</format>
     </data>
     <data source="PlaceOfDeath">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Place of Death}} Place of Death</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Ctry
+      <format>{{#invoke:CharacterInfobox|_Ctry
         | Value       = {{{PlaceOfDeath|}}}
         }}</format>
     </data>
     <data source="PlaceOfDestruction">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Place of Destruction}} Place of Destruction</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Ctry
+      <format>{{#invoke:CharacterInfobox|_Ctry
         | Value       = {{{PlaceOfDestruction|}}}
         }}</format>
     </data>
     <data source="Creators">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Creators}} Creators</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_Creators
+      <format>{{#invoke:CharacterInfobox|_Creators
         | Value       = {{{Creators|}}}
         | Value2      = {{{Creators2|}}}
         }}</format>
     </data>
     <data source="OriginalPublisher">
-      <label>{{#invoke:CharacterInfobox/sandbox|_InfoIcon
+      <label>{{#invoke:CharacterInfobox|_InfoIcon
         | buttonsize = {{{buttonsize|10px}}}
         | Label = Original Publisher}} Original Publisher</label>
-      <format>{{#invoke:CharacterInfobox/sandbox|_OriginalPublisher
+      <format>{{#invoke:CharacterInfobox|_OriginalPublisher
         | Value       = {{{OriginalPublisher|}}}
         }}</format>
     </data>
@@ -269,37 +268,38 @@
   <group layout="horizontal">
     <data source="First">
       <label>First Appearance</label>
-      <format>{{#if: {{{First|}}}
-  | {{#if: {{#pos:{{{First}}}|Season}}
+      <default>[[:Category:Character First Appearance Needed|Unknown]][[Category:Character First Appearance Needed]]</default>
+      <format>{{#if: {{#pos:{{{First}}}|Season}}
       | {{Ed| {{{First|}}} }}
       | {{#if: {{#pos:{{{First}}}|#}}{{#pos:{{{First}}}|Vol}}
           | {{Cid|{{{First}}}}}
           | {{{First|}}}
           }}
-      }}{{#if: {{{First2|}}} | &nbsp;{{{First2}}} }}
-  | {{#if:{{{First2|}}}
-      |&nbsp;{{{First2}}}
-      | [[:Category:Character First Appearance Needed|Unknown]][[Category:Character First Appearance Needed]]
-      }}
-  }}</format>
+      }}{{#if: {{{First2|}}} | &nbsp;{{{First2}}} }}</format>
     </data>
     <data source="Last">
       <label>Last Appearance</label>
-      <format></format>
+      <format>{{#if: {{#pos:{{{Last|}}}|Season}}
+      | {{Ed|{{{Last|}}}}}
+      | {{#if: {{#pos:{{{Last|}}}|#}}{{#pos:{{{Last|}}}|Vol}}
+            | {{Cid|{{{Last|}}}}}
+            | {{{Last|}}}
+        }}
+      }}</format>
     </data>
     <data source="Death">
       <label>Appearance of Death</label>
-      <format>{{#if: {{{Last|}}}{{{Death|}}}
-                        | {{#if: {{#pos:{{{Last|{{{Death|}}}}}}|Season}}
-                            | {{Ed|{{{Last|{{{Death|}}}}}}}}
-                            | {{#if: {{#pos:{{{Last|{{{Death|}}}}}}|#}}{{#pos:{{{Last|{{{Death|}}}}}}|Vol}}
-                                | {{Cid|{{{Last|{{{Death|}}}}}}}}
-                                | {{{Last|{{{Death|}}}}}}
-                                }}
-                            }}
-                        }}
-
-<!-- Era and Debut Year Categories, DPL use-->
+      <format>{{#if: {{#pos:{{{Death|}}}|Season}}
+      | {{Ed|{{{Death|}}}}}
+      | {{#if: {{#pos:{{{Death|}}}|#}}{{#pos:{{{Death|}}}|Vol}}
+            | {{Cid|{{{Death|}}}}}
+            | {{{Death|}}}
+        }}
+      }}</format>
+    </data>
+  </group>
+</infobox></includeonly>
+<includeonly><!-- Era and Debut Year Categories, DPL use-->
 {{#if: {{#pos:{{{First|}}}|[}} {{#pos:{{{First|}}}|]}} {{#pos:{{{First|}}}|{{!}} }}
   |
   |{{#if: {{#pos:{{GetEraCat| {{GetYear| {{CnstNL| {{{First}}} }} }} }}|error}}
@@ -308,14 +308,9 @@
        [[Category:{{GetYear| {{CnstNL| {{{First}}} }} }} Character Debuts]]
    }}
 }}
-<!-- End Era and Debut Year Categories --></format>
-    </data>
-  </group>
-</infobox>
-<div style="float: right; clear:right;">{{InfoboxPromo}}</div><!-- #END OF INFOBOX
-
-
--->{{#if: {{#pos:{{lc:{{SITENAME}}}}|dc}}
+<!-- End Era and Debut Year Categories --></includeonly>
+<includeonly><div style="float: right; clear:right;">{{InfoboxPromo}}</div></includeonly>
+<includeonly>{{#if: {{#pos:{{lc:{{SITENAME}}}}|dc}}
   |{{#if: {{{Quotation|}}}{{{Speaker|}}}{{{QuoteSource|}}}
      |{{QuoteWithCat | {{{Quotation}}} | {{#if: {{{Speaker|}}} | {{{Speaker}}} }} | {{#if: {{{QuoteSource|}}} | {{{QuoteSource}}} | [[Category:Quote Source Needed]] }} }}
      |{{#if: {{{BlockQuote|}}}
@@ -442,9 +437,12 @@ OtherMedia Filled In
 -->{{#if:{{{OtherMedia|}}}|[[Category:OtherMedia Field Filled Out]]}}<!--
 
 -->
+</includeonly>
 <noinclude>
 __TOC__
 {{Framework}}
 __NOEDITSECTION__
 {{{{FULLPAGENAME}}/Documentation}}
 </noinclude>
+<includeonly>[[Category:Characters]]</includeonly>
+<noinclude>[[Category:Templates]][[Category:Page Templates]]</noinclude>

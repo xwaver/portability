@@ -1,0 +1,12 @@
+.portable-infobox .pi-data .pi-font, .portable-infobox .pi-data .pi-secondary-font, .portable-infobox .pi-horizontal-group .pi-font {
+    font-size: 10px;
+}
+.portable-infobox .pi-title {
+  padding: 10px 0;
+}
+
+.portable-infobox .pi-data-label img[data-image-name="Information-silk.png"] { padding-right: 5px; }
+
+.portable-infobox .pi-theme-comic .comic-headtitle { text-align:center; font-size:12px; font-weight:900; line-height:1.5em; }
+
+.portable-infobox .pi-theme-comic .comic-subtitle { text-align:center; font-size:10px; font-weight:900; line-height:0em; padding:0.5em 0pt 0.5em 0pt; }

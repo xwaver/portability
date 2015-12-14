@@ -1,9 +1,61 @@
 <infobox>
+  <data>
+    <default>{{#invoke:Infobox/Comic|HeadTitle
+              | HeadTitle = {{{HeadTitle}}}
+              | StoryArc = {{{StoryArc}}}
+              | StoryArc2 = {{{StoryArc2}}}
+              | Event = {{{Event}}}
+              | Event2 = {{{Event2}}}
+              | Storyline = {{{Storyline}}}
+              }}</default>
+  </data>
   <image>
+    <default>
+      {{#tag:gallery|
+        {{#invoke:Infobox/Comic|Image1| Image  = {{{Image}}}  | ImageText  = {{{ImageText}}} }}
+        {{#invoke:Infobox/Comic|Image2| Image2 = {{{Image2}}} | Image2Text = {{{Image2Text}}}}}
+        {{{Image3}}}{{!}}{{{Image3Text}}}
+        {{{Image4}}}{{!}}{{{Image4Text}}}
+        {{{Image5}}}{{!}}{{{Image5Text}}}
+        {{{Image6}}}{{!}}{{{Image6Text}}}
+        {{{Image7}}}{{!}}{{{Image7Text}}}
+        {{{Image8}}}{{!}}{{{Image8Text}}}
+        {{{Image9}}}{{!}}{{{Image9Text}}}
+        {{{Image10}}}{{!}}{{{Image10Text}}}
+        {{{Image11}}}{{!}}{{{Image11Text}}}
+        {{{Image12}}}{{!}}{{{Image12Text}}}
+        {{{Image13}}}{{!}}{{{Image13Text}}}
+      }}
+    </default>
     <caption>
-      <default></default>
+      <default>{{#ifexist:{{{Title| {{#sub:{{#explode:{{PAGENAME}}|Vol|0}}|0}} }}}/Covers
+        | [[{{{Title|{{#sub:{{#explode:{{PAGENAME}}|Vol|0}}|0}}}}}/Covers|Alternate Covers:]]
+        | {{#if: {{{Gallery|}}}
+          | [[{{{Gallery}}}|Alternate Covers:]]
+          | Alternate Covers:}}
+          }}</default>
     </caption>
   </image>
+  <title>
+    <default>{{#invoke:Infobox/Comic|ComicTitle
+      | Title = {{{Title}}}
+      | Volume = {{{ Volume}}}
+      | Issue = {{{Issue}}}
+      }}</default>
+  </title>
+  <group layout="horizontal">
+    <data>
+      <label>Published</label>
+      <default>{{#invoke:Infobox/Comic|PublicationDate
+        | Month  = {{{Month}}}
+        | Year   = {{{Year}}}
+        | Season = {{{Season}}}
+        }}</default>
+    </data>
+    <data>
+      <label>Released</label>
+    </data>
+  </group>
 </infobox>
 | Image               =
 | Month               =

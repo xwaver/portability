@@ -6,6 +6,9 @@ local getArgs = require('Dev:Arguments').getArgs
 -- Since this should only be evaluated once per pageview, it's now global
 _G.vars = { Pagename = mw.title.getCurrentTitle().text }
 
+--[[
+---- PRIVATE METHODS
+]]--
 local function transition(funcName)
   -- This module's initial functions were made using InfoboxBuilder.
   -- As a result, most of them can't be invoked for Portable Infoboxes.
@@ -15,9 +18,6 @@ local function transition(funcName)
 		return CharacterInfobox[funcName](args, vars)
 	end
 end
---[[
----- PRIVATE METHODS
-]]--
 
 local CitizenshipCheck = function( values, table )
   local output = ""
@@ -150,7 +150,6 @@ end
 local vars = {}
 -- These are the invocation-friendly calls.
 -- These are backward from the normal '_' order, for legacy purposes.
-vars.Pagename = mw.title.getCurrentTitle().text
 CharacterInfobox._InfoButton = transition('InfoButton')
 CharacterInfobox._InfoIcon = transition('InfoIcon')
 CharacterInfobox._getTitle = transition('getTitle')
@@ -345,7 +344,9 @@ function CharacterInfobox.MaritalStatus( field, vars )
     end
   end
 
-  output = output .. " " .. field.Value2 or ''
+  if not HF.isempty( field.Value2 ) then
+		output = output .. " " .. field.Value2
+	end
 
   return output
 end
@@ -375,6 +376,9 @@ end
 
 function CharacterInfobox.Gender( field, vars )
   local category = field.Value .. " Characters"
+	if HF.isempty( field.Value2 ) then
+		field.Value2 = ''
+	end
   return HF.CategoryLink( category, vars.Pagename, field.Value ) .. field.Value2 or ''
 end
 
@@ -430,10 +434,15 @@ function CharacterInfobox.Height( field, vars )
       output = output .. HF.CategoryLink( inchesCategory, vars.Pagename, "" )
 
       -- Concat Height2
-      output = output .. " " .. field.Value2 or ''
+			if not HF.isempty( field.Value2 ) then
+				output = output .. " " .. field.Value2
+			end
 
     else
-      output = field.Value .. " " .. field.Value2 or ''
+			if HF.isempty( field.Value2 ) then
+				field.Value2 = ''
+			end
+      output = field.Value .. " " .. field.Value2
     end
 
   return output
@@ -476,9 +485,14 @@ function CharacterInfobox.Weight( field, vars )
 
     output = output .. HF.CategoryLink( "Weight", "Weight " .. weightLbs, "" )
 
-    output = output .. " " .. field.Value2 or ''
+		if not HF.isempty( field.Value2 ) then
+			output = output .. " " .. field.Value2
+		end
   else
-    output = field.Value .. " " .. field.Value2 or ''
+		if HF.isempty( field.Value2 ) then
+			field.Value2 = ''
+		end
+    output = field.Value .. " " .. field.Value2
   end
 
   return output
@@ -488,7 +502,10 @@ function CharacterInfobox.Eyes( field, vars )
   local output = ""
 
     output = output .. EyesCategory( field.Value, vars )
-    output = output .. " " .. EyesCategory( field.Value2, vars )
+		if not HF.isempty( field.Value2 ) then
+			output = output .. " " .. EyesCategory( field.Value2, vars )
+		end
+
 
   return output
 end
@@ -513,8 +530,10 @@ function CharacterInfobox.Skin( field, vars )
     else
       output = output .. HF.CategoryLink( skin .. " Skin", vars.Pagename, skin )
     end
+		if not HF.isempty( field.Value2 ) then
+	    output = output .. field.Value2
+	  end
 
-    output = output .. field.Value2 or ''
   return output
 end
 
@@ -563,7 +582,7 @@ function CharacterInfobox.Universe( field, vars )
   end
 
   if not HF.isempty( field.Value2 ) then
-    output = output .. " " .. field.Value2 or ''
+    output = output .. " " .. field.Value2
   end
 
   if not HF.isempty( field.ValueRef ) then
@@ -622,8 +641,9 @@ local output = ""
   if string.sub( output, -1, -1 ) == "," then
     output = string.sub( output, 1, -2 ) -- Remove last comma
   end
-
-  output = output .. " " .. field.Value2 or ''
+	if not HF.isempty( field.Value2 ) then
+		output = output .. " " .. field.Value2
+	end
 return output
 end
 
