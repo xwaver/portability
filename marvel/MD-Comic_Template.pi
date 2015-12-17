@@ -1,4 +1,11 @@
 <infobox theme="comic">
+  <title>
+    <default>{{#invoke:Infobox/Comic|ComicTitle
+      | Title = {{{Title|}}}
+      | Volume = {{{Volume|}}}
+      | Issue = {{{Issue|}}}
+      }}</default>
+  </title>
   <data source="HeadTitle">
     <default>{{#invoke:Infobox/Comic|HeadTitle
               | HeadTitle = {{{HeadTitle|}}}
@@ -36,13 +43,7 @@
           }}</default>
     </caption>
   </image>
-  <title>
-    <default>{{#invoke:Infobox/Comic|ComicTitle
-      | Title = {{{Title|}}}
-      | Volume = {{{Volume|}}}
-      | Issue = {{{Issue|}}}
-      }}</default>
-  </title>
+
   <group layout="horizontal">
     <data source="PublicationDate">
       <label>Published</label>
@@ -62,6 +63,7 @@
         | Canceled = {{{Canceled|}}}
         }}</default>
     </data>
+  </group>
   <group>
     <header>Issue Details</header>
     <data source="Pages">
@@ -110,9 +112,7 @@
         | buttonsize = {{{buttonsize|10px}}}
         | Section    = Cover Artists
         | Label      = [[:Category:Cover Artists|Cover Artists]]}}</label>
-        <format>{{#if: {{#pos: {{{CoverArtist1}}}|redited}}{{#pos: {{{CoverArtist1}}}|NA}}{{#pos: {{{CoverArtist1}}}|N/A}}
-          |Uncredited
-          | {{#invoke:Infobox/Comic|Contributors
+        <format>{{#if:{{#pos:{{{CoverArtist1}}}|redited}}{{#pos:{{{CoverArtist1}}}|NA}}{{#pos:{{{CoverArtist1}}}|N/A}}|Uncredited|{{#invoke:Infobox/Comic|Contributors
               | Contributors.min = 1
               | Contributors.max = 10
               | Contributors.prefix = CoverArtist
@@ -124,18 +124,12 @@
       <label>{{#invoke:HF|HelpButton
         | buttonsize = {{{buttonsize|10px}}}
         | Label      = Production}}</label>
-      <format>
-        {{#if:{{{Producer|}}}|[[{{StaffCorrection|{{{Producer}}}}}|{{{Producer}}}]]}}
-        {{#if:{{{Production|}}}|{{#if:{{{Producer|}}}|<br />&nbsp;}}[[{{StaffCorrection|{{{Production}}}}}|{{{Production}}}]]}}
-        {{#if:{{{Production1_1|}}}|
-         {{#if:{{{Producer|}}}{{{Production|}}}|<br />&nbsp;}}
-         {{#invoke:Infobox/Comic|Contributors
+      <format>{{#if:{{{Producer|}}}|[[{{StaffCorrection|{{{Producer}}}}}|{{{Producer}}}]]}}{{#if:{{{Production|}}}|{{#if:{{{Producer|}}}|<br />&nbsp;}}[[{{StaffCorrection|{{{Production}}}}}|{{{Production}}}]]}}{{#if:{{{Production1_1|}}}|{{#if:{{{Producer|}}}{{{Production|}}}|<br />&nbsp;}}{{#invoke:Infobox/Comic|Contributors
           | Contributors.min = 1
           | Contributors.max = 5
           | Contributors.prefix = Production1_
           | Contributors.between = <br />}}
-        }}
-      </format>
+        }}</format>
     </data>
     <data source="Publisher">
       <default>{{{Publisher|}}}{{{Publisher1_1|}}}</default>
@@ -150,8 +144,7 @@
          | Contributors.max = 5
          | Contributors.prefix = Publisher1_
          | Contributors.between = <br />}}
-         }}
-       </format>
+         }}</format>
        </data>
        <data source="ChiefCreativeOfficer">
          <default>{{{CCO|}}}{{{ChiefCreativeOfficer|}}}</default>
@@ -189,20 +182,18 @@
             | Uncredited
             | [[{{StaffCorrection|{{{Writer1_1}}}}}|{{{Writer1_1}}}]] {{#if:{{{Canceled|}}}||[[Category:{{#explode:{{StaffCorrection|{{{Writer1_1}}}}}|{{!}}}}/Writer]]}}
             }}
-        }}{{#if: {{{Writer1_2|}}}|<br />}}
-        {{#invoke:Infobox/Comic|Contributors
+        }}{{#if: {{{Writer1_2|}}}|<br />}}{{#invoke:Infobox/Comic|Contributors
          | Contributors.min = 2
          | Contributors.max = 40
          | Contributors.prefix = Writer1_
-         | Contributors.between = <br />}}
-      </format>
+         | Contributors.between = <br />}}</format>
     </data>
     <data source="Penciler1_1">
       <label>{{#invoke:HF|HelpButton
         | buttonsize = {{{buttonsize|10px}}}
         | Label      = [[:Category:Penciler|Pencilers]]}}</label>
       <format>{{#if: {{{Penciler1_1|}}}
-        | {{#if: {{#pos:{{lc:{{{Penciler1_1}}}}}|uncredited}}{{#pos:{{lc:{{{Penciler1_1}}}}}|n/a}}
+        | {{#if:{{#invoke:Infobox/Comic|CreditCheck|{{{Penciler1_1}}} {{#pos:{{lc:{{{Penciler1_1}}}}}|uncredited}}{{#pos:{{lc:{{{Penciler1_1}}}}}|n/a}}
             | Uncredited
             | [[{{StaffCorrection|{{{Penciler1_1}}}}}|{{{Penciler1_1}}}]] {{#if:{{{Canceled|}}}||[[Category:{{#explode:{{StaffCorrection|{{{Penciler1_1}}}}}|{{!}}}}/Penciler]]}}
             }}
@@ -269,18 +260,11 @@
       <label>{{#invoke:HF|HelpButton
         | buttonsize = {{{buttonsize|10px}}}
         | Label      = [[:Category:Editors|Editors]]}}</label>
-      <format>{{#if: {{{Editor1_1|}}}
-        | {{#if: {{#pos:{{lc:{{{Editor1_1}}}}}|uncredited}}{{#pos:{{lc:{{{Editor1_1}}}}}|n/a}}
-            | Uncredited
-            | [[{{StaffCorrection|{{{Editor1_1}}}}}|{{{Editor1_1}}}]] {{#if:{{{Canceled|}}}||[[Category:{{#explode:{{StaffCorrection|{{{Editor1_1}}}}}|{{!}}}}/Editor]]}}
-            }}
-        }}{{#if: {{{Editor1_2|}}}|<br />}}
-        {{#invoke:Infobox/Comic|Contributors
+      <format>{{#if: {{{Editor1_1|}}} | {{#if: {{#pos:{{lc:{{{Editor1_1}}}}}|uncredited}}{{#pos:{{lc:{{{Editor1_1}}}}}|n/a}} | Uncredited | [[{{StaffCorrection|{{{Editor1_1}}}}}|{{{Editor1_1}}}]] {{#if:{{{Canceled|}}}||[[Category:{{#explode:{{StaffCorrection|{{{Editor1_1}}}}}|{{!}}}}/Editor]]}} }} }}{{#if: {{{Editor1_2|}}}|<br />}}{{#invoke:Infobox/Comic|Contributors
          | Contributors.min = 2
          | Contributors.max = 40
          | Contributors.prefix = Editor1_
-         | Contributors.between = <br />}}
-      </format>
+         | Contributors.between = <br />}}</format>
     </data>
     <data source="CustomMembers1_1">
       <label>{{{CustomRole1_1}}}</label>
