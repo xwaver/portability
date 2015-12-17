@@ -565,11 +565,14 @@ function CharacterInfobox.Universe( field, vars )
   local output = ""
   local UniverseNo    = string.match( field.Value, "%d+" )
   local UniverseTRN   = string.match( string.lower( field.Value ), "trn" )
+	local UniverseBW    = string.match( string.lower( field.Value ), "bw" )
   local UniverseValid = ""
 
   if UniverseNo ~= nil then
     if UniverseTRN ~= nil then
       UniverseValid = "Earth-TRN" .. UniverseNo
+		else if UniverseBW ~= nil then
+			UniverseValid = "Earth-BW" .. UniverseNo
     else
       UniverseValid = "Earth-" .. UniverseNo
     end
