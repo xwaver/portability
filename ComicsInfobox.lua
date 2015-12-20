@@ -146,34 +146,34 @@ end
  
 -- These are the invocation-friendly calls.
 -- These are backward from the normal '_' order, for legacy purposes.
-CharacterInfobox._InfoButton = transition('InfoButton')
-CharacterInfobox._InfoIcon = transition('InfoIcon')
-CharacterInfobox._getTitle = transition('getTitle')
-CharacterInfobox._MainImage = transition('MainImage')
-CharacterInfobox._MainImageLabel = transition('MainImageLabel')
-CharacterInfobox._RealName = transition('RealName')
-CharacterInfobox._CurrentAlias = transition('CurrentAlias')
-CharacterInfobox._Alignment = transition('Alignment')
-CharacterInfobox._Identity = transition('Identity')
-CharacterInfobox._Citizenship = transition('Citizenship')
-CharacterInfobox._MaritalStatus = transition('MaritalStatus')
-CharacterInfobox._Occupation = transition('Occupation')
-CharacterInfobox._Characteristics = transition('Characteristics')
-CharacterInfobox._Gender = transition('Gender')
-CharacterInfobox._Height = transition('Height')
-CharacterInfobox._Weight = transition('Weight')
-CharacterInfobox._Eyes = transition('Eyes')
-CharacterInfobox._Hair = transition('Hair')
-CharacterInfobox._Skin = transition('Skin')
-CharacterInfobox._UnusualFeatures = transition('UnusualFeatures')
-CharacterInfobox._Origin = transition('Origin')
-CharacterInfobox._Universe = transition('Universe')
-CharacterInfobox._Sector = transition('Sector')
-CharacterInfobox._Ctry = transition('Ctry')
-CharacterInfobox._Creators = transition('Creators')
-CharacterInfobox._OriginalPublisher = transition('OriginalPublisher')
+Infobox._InfoButton = transition('InfoButton')
+Infobox._InfoIcon = transition('InfoIcon')
+Infobox._getTitle = transition('getTitle')
+Infobox._MainImage = transition('MainImage')
+Infobox._MainImageLabel = transition('MainImageLabel')
+Infobox._RealName = transition('RealName')
+Infobox._CurrentAlias = transition('CurrentAlias')
+Infobox._Alignment = transition('Alignment')
+Infobox._Identity = transition('Identity')
+Infobox._Citizenship = transition('Citizenship')
+Infobox._MaritalStatus = transition('MaritalStatus')
+Infobox._Occupation = transition('Occupation')
+Infobox._Characteristics = transition('Characteristics')
+Infobox._Gender = transition('Gender')
+Infobox._Height = transition('Height')
+Infobox._Weight = transition('Weight')
+Infobox._Eyes = transition('Eyes')
+Infobox._Hair = transition('Hair')
+Infobox._Skin = transition('Skin')
+Infobox._UnusualFeatures = transition('UnusualFeatures')
+Infobox._Origin = transition('Origin')
+Infobox._Universe = transition('Universe')
+Infobox._Sector = transition('Sector')
+Infobox._Ctry = transition('Ctry')
+Infobox._Creators = transition('Creators')
+Infobox._OriginalPublisher = transition('OriginalPublisher')
  
-function CharacterInfobox.InfoIcon( field )
+function Infobox.InfoIcon( field )
     if HF.isempty( field.buttonsize ) then field.buttonsize = "10px" end
     local link = string.format(
         "[[File:Information-silk.png|%s|link=Click here for help with this field#%s]]",
@@ -183,7 +183,7 @@ function CharacterInfobox.InfoIcon( field )
     return link
 end
  
-function CharacterInfobox.InfoButton( field, vars )
+function Infobox.InfoButton( field, vars )
   if HF.isempty( field.buttonsize ) then field.buttonsize = "10px" end
     local link = string.format(
         "[[File:Information-silk.png|%s|link=Click here for help with this field#%s]]",
@@ -198,7 +198,7 @@ function CharacterInfobox.InfoButton( field, vars )
   return tostring(out)
 end
  
-function CharacterInfobox.getTitle( field, vars )
+function Infobox.getTitle( field, vars )
   local title = field.Value
  
   if not HF.isempty(field.Title) then
@@ -233,7 +233,7 @@ function CharacterInfobox.getTitle( field, vars )
   return link
 end
  
-function CharacterInfobox.MainImage( field, vars )
+function Infobox.MainImage( field, vars )
   if HF.isempty( field.ImageText ) then field.ImageText = vars.Pagename end
  
   local output = '[[File:' .. field.Value .. '|center|' .. field.ImageText .. ']]'
@@ -241,13 +241,13 @@ function CharacterInfobox.MainImage( field, vars )
   return output
 end
  
-function CharacterInfobox.MainImageLabel( field, vars )
+function Infobox.MainImageLabel( field, vars )
   if HF.isempty( field.Gallery ) then field.Gallery = vars.Pagename .. "/Gallery" end
  
   return HF.Link( field.Gallery, field.Label )
 end
  
-function CharacterInfobox.RealName( field, vars )
+function Infobox.RealName( field, vars )
   local output = ""
  
   if HF.isempty( field.ValueReal ) then
@@ -267,13 +267,13 @@ function CharacterInfobox.RealName( field, vars )
   return output
 end
  
-function CharacterInfobox.CurrentAlias( field, vars )
+function Infobox.CurrentAlias( field, vars )
   local output = field.Value
     if not HF.isempty( field.ValueRef ) then output = output .. "&nbsp;" .. field.ValueRef end
   return output
 end
  
-function CharacterInfobox.Alignment( field, vars )
+function Infobox.Alignment( field, vars )
   local output = ""
   local alignment = ""
   if not HF.isempty( field.Value ) then
@@ -292,7 +292,7 @@ function CharacterInfobox.Alignment( field, vars )
   return output
 end
  
-function CharacterInfobox.Identity( field, vars )
+function Infobox.Identity( field, vars )
   local output = ""
   if not HF.isempty( field.Value ) then
     local category = field.Value .. " Identity"
@@ -304,7 +304,7 @@ function CharacterInfobox.Identity( field, vars )
   return output
 end
  
-function CharacterInfobox.Citizenship( field, vars )
+function Infobox.Citizenship( field, vars )
   local ctznTable    = require('Module:Citizenship')
     local output = ""
  
@@ -327,7 +327,7 @@ function CharacterInfobox.Citizenship( field, vars )
   return output
 end
  
-function CharacterInfobox.MaritalStatus( field, vars )
+function Infobox.MaritalStatus( field, vars )
   local statuses = HF.explode( ";", field.Value )
  
   local output = ""
@@ -347,8 +347,8 @@ function CharacterInfobox.MaritalStatus( field, vars )
   return output
 end
  
-function CharacterInfobox.Occupation( field, vars )
-  local occupations = require('Module:CharacterInfoboxOccupation')
+function Infobox.Occupation( field, vars )
+  local occupations = require('Module:InfoboxOccupation')
   local output = field.Value
  
   for key, value in pairs(occupations) do
@@ -362,7 +362,7 @@ function CharacterInfobox.Occupation( field, vars )
   return output
 end
  
-function CharacterInfobox.Characteristics( field, vars )
+function Infobox.Characteristics( field, vars )
   local output = field.Value
   if not HF.isempty( field.CharRef ) then
     output = output .. field.CharRefTag
@@ -370,7 +370,7 @@ function CharacterInfobox.Characteristics( field, vars )
   return output
 end
  
-function CharacterInfobox.Gender( field, vars )
+function Infobox.Gender( field, vars )
   local category = field.Value .. " Characters"
     if HF.isempty( field.Value2 ) then
         field.Value2 = ''
@@ -378,7 +378,7 @@ function CharacterInfobox.Gender( field, vars )
   return HF.CategoryLink( category, vars.Pagename, field.Value ) .. field.Value2 or ''
 end
  
-function CharacterInfobox.Height( field, vars )
+function Infobox.Height( field, vars )
   local output    = ""
   local valid     = false -- to check if the height (in ft.) is in a valid format
   local validInch = false -- to check if the height (in inches) is in a valid format
@@ -444,7 +444,7 @@ function CharacterInfobox.Height( field, vars )
   return output
 end
  
-function CharacterInfobox.Weight( field, vars )
+function Infobox.Weight( field, vars )
   local output = ""
   local Units  = require('Module:Units')
   local unit   = ""
@@ -494,7 +494,7 @@ function CharacterInfobox.Weight( field, vars )
   return output
 end
  
-function CharacterInfobox.Eyes( field, vars )
+function Infobox.Eyes( field, vars )
   local output = ""
  
     output = output .. EyesCategory( field.Value, vars )
@@ -506,7 +506,7 @@ function CharacterInfobox.Eyes( field, vars )
   return output
 end
  
-function CharacterInfobox.Hair( field, vars )
+function Infobox.Hair( field, vars )
   local output = ""
  
   output = output .. HairCategory( field.Value, vars )
@@ -518,7 +518,7 @@ function CharacterInfobox.Hair( field, vars )
   return output
 end
  
-function CharacterInfobox.Skin( field, vars )
+function Infobox.Skin( field, vars )
   local output = ""
   local skin   = HF.firstToUpper( field.Value )
     if string.lower( skin ) == "none" or string.lower( skin ) == "n/a" then
@@ -533,10 +533,10 @@ function CharacterInfobox.Skin( field, vars )
   return output
 end
  
-function CharacterInfobox.UnusualFeatures( field, vars )
+function Infobox.UnusualFeatures( field, vars )
   local output = field.Value
  
-  local unusualFeatures = require('Module:CharacterInfoboxUnusualFeatures')
+  local unusualFeatures = require('Module:InfoboxUnusualFeatures')
   local valid = unusualFeatures.valid
   local exceptions = unusualFeatures.exceptions
  
@@ -545,10 +545,10 @@ function CharacterInfobox.UnusualFeatures( field, vars )
   return output
 end
  
-function CharacterInfobox.Origin( field, vars )
+function Infobox.Origin( field, vars )
   local output = field.Value
  
-  local origins = require('Module:CharacterInfoboxOrigins')
+  local origins = require('Module:InfoboxOrigins')
   local valid = origins.valid
   local exceptions = origins.exceptions
  
@@ -557,7 +557,7 @@ function CharacterInfobox.Origin( field, vars )
   return output
 end
  
-function CharacterInfobox.Universe( field, vars )
+function Infobox.Universe( field, vars )
   local output = ""
   local UniverseNo    = string.match( field.Value, "%d+" )
   local UniverseTRN   = string.match( string.lower( field.Value ), "trn" )
@@ -591,7 +591,7 @@ function CharacterInfobox.Universe( field, vars )
   return output
 end
  
-function CharacterInfobox.Sector( field, vars )
+function Infobox.Sector( field, vars )
   local output =HF.Link( field.Value, "Sector " .. field.Value )
   if string.find( vars.Theme, "greenlantern" ) ~= nil then
     output = output .. HF.CategoryLink( "Green Lantern Corps member", vars.Pagename, "" )
@@ -599,8 +599,8 @@ function CharacterInfobox.Sector( field, vars )
   return output
 end
  
-function CharacterInfobox.Ctry( field, vars )
-  local substitutes = require('Module:CharacterInfoboxCtry')
+function Infobox.Ctry( field, vars )
+  local substitutes = require('Module:InfoboxCtry')
   local output = ""
  
   if string.find( field.Value, "%[%[.+%]%]" ) == nil then
@@ -616,7 +616,7 @@ function CharacterInfobox.Ctry( field, vars )
   return output
 end
  
-function CharacterInfobox.Creators( field, vars )
+function Infobox.Creators( field, vars )
 local output = ""
   local SC = require('Module:StaffCorrection')
  
