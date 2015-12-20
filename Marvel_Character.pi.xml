@@ -1,0 +1,301 @@
+<infobox theme="character">
+  <title source="Title">
+    <default>{{#invoke:ComicsInfobox/Character|getTitle
+      | Title           = {{{Title|}}}
+      | CurrentAlias    = {{{CurrentAlias|}}}
+      | CurrentAliasRef = {{{CurrentAliasRef|}}}
+      | RealName        = {{{RealName|}}}
+      | Death           = {{{Death|}}}
+      }}</default>
+  </title>
+  <image source="Image">
+    <caption source="Gallery">
+    <default>[[{{PAGENAME}}/Gallery|Gallery]]</default>
+    <format>{{#invoke:ComicsInfobox/Character|MainImageLabel
+      | Gallery       = {{{Gallery|}}}
+      | Label         = Gallery
+      }}</format>
+    </caption>
+  </image>
+  <data source="RealName">
+    <default>Unknown</default>
+    <label>{{#invoke:ComicsHF|HelpButton
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Real Name}} Real Name</label>
+    <format>{{#invoke:ComicsInfobox/Character|RealName
+      | Value       = Unknown
+      | ValueReal   = {{{RealName|}}}
+      | Value2      = {{{RealName2|}}}
+      | ValueRef    = {{{RealNameRef|}}}
+      }}</format>
+  </data>
+  <data source="CurrentAlias">
+    <label>{{#invoke:ComicsHF|HelpButton
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Current Alias}} Current Alias</label>
+    <format>{{#invoke:ComicsInfobox/Character|CurrentAlias
+      | Value       = {{{CurrentAlias|}}}
+      | ValueRef    = {{{CurrentAliasRef|}}}
+      }}</format>
+  </data>
+  <data source="Aliases">
+    <label>{{#invoke:ComicsHF|HelpButton
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Aliases}} Aliases</label>
+  </data>
+  <data source="EditorialNames">
+    <label>{{#invoke:ComicsHF|HelpButton
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Editorial Names}} Editorial Names</label>
+  </data>
+  <data source="Relatives">
+    <label>{{#invoke:ComicsHF|HelpButton
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Relatives}} Relatives</label>
+  </data>
+  <data source="Affiliation">
+    <label>{{#invoke:ComicsHF|HelpButton
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Affiliation}} Affiliation</label>
+  </data>
+  <data source="BaseOfOperations">
+    <label>{{#invoke:ComicsHF|HelpButton
+      | buttonsize = {{{buttonsize|10px}}}
+      | Label = Base Of Operations}} Base Of Operations</label>
+  </data>
+  <data source="Custom">
+    <label>{{{CustomLabel|Label Needed!}}}</label>
+  </data>
+  <group>
+    <header>Status</header>
+    <data source="Alignment">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Alignment}} Alignment</label>
+      <format>{{#invoke:ComicsInfobox/Character|Alignment
+        | Value       = {{{Alignment|}}}
+        }}</format>
+    </data>
+    <data source="Identity">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Identity}} Identity</label>
+      <format>{{#invoke:ComicsInfobox/Character|Identity
+        | Value       = {{{Identity|}}}
+        | Value2      = {{{Identity2|}}}
+        }}</format>
+    </data>
+    <data source="Citizenship">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Citizenship}} Citizenship</label>
+      <format>{{#invoke:ComicsInfobox/Character|Citizenship
+        | Value       = {{{Citizenship|}}}
+        | Value2      = {{{Citizenship2|}}}
+        }}</format>
+    </data>
+    <data source="MaritalStatus">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Marital Status}} Marital Status</label>
+      <format>{{#invoke:ComicsInfobox/Character|MaritalStatus
+        | Value       = {{{MaritalStatus|}}}
+        | Value2      = {{{MaritalStatus2|}}}
+        }}</format>
+    </data>
+    <data source="Occupation">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Occupation}} Occupation</label>
+      <format>{{#invoke:ComicsInfobox/Character|Occupation
+        | Value       = {{{Occupation|}}}
+        }}</format>
+    </data>
+    <data source="Education">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Education}} Education</label>
+    </data>
+  </group>
+  <group>
+    <header>Characteristics{{#if:{{{CharRef|}}}|{{#tag:ref|{{{CharRef}}}}}|}}</header>
+    <data source="Gender">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Gender}} Gender</label>
+      <format>{{#invoke:ComicsInfobox/Character|Gender
+        | Value       = {{{Gender|}}}
+        | Value2      = {{{Gender2|}}}
+        }}</format>
+    </data>
+    <data source="Height">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Height}} Height</label>
+      <format>{{#invoke:ComicsInfobox/Character|Height
+        | Value       = {{{Height|}}}
+        | Value2      = {{{Height2|}}}
+        }}</format>
+    </data>
+    <data source="Weight">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Weight}} Weight</label>
+      <format>{{#invoke:ComicsInfobox/Character|Weight
+        | Value       = {{{Weight|}}}
+        | Value2      = {{{Weight2|}}}
+        }}</format>
+    </data>
+    <data source="Eyes">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Eyes}} Eyes</label>
+      <format>{{#invoke:ComicsInfobox/Character|Eyes
+        | Value       = {{{Eyes|}}}
+        | Value2      = {{{Eyes2|}}}
+        }}</format>
+    </data>
+    <data source="Hair">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Hair}} Hair</label>
+      <format>{{#invoke:ComicsInfobox/Character|Hair
+        | Value       = {{{Hair|}}}
+        | Value2      = {{{Hair2|}}}
+        }}</format>
+    </data>
+    <data source="Skin">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Skin}} Skin</label>
+      <format>{{#invoke:ComicsInfobox/Character|Skin
+        | Value       = {{{UnusualSkinColour|}}}
+        | Value2      = {{{UnusualSkinColour2|}}}
+        }}</format>
+    </data>
+    <data source="UnusualFeatures">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Unusual Features}} Unusual Features</label>
+      <format>{{#invoke:ComicsInfobox/Character|UnusualFeatures
+        | Value       = {{{UnusualFeatures|}}}
+        }}</format>
+    </data>
+  </group>
+  <group>
+    <header>Origin</header>
+    <data source="Origin">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Origin}} Origin</label>
+      <format>{{#invoke:ComicsInfobox/Character|Origin
+        | Value       = {{{Origin|}}}
+        }}</format>
+    </data>
+    <data source="Universe">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Universe}} Universe</label>
+      <format>{{#invoke:ComicsInfobox/Character|Universe
+        | Value       = {{{Universe|}}}
+        | Value2      = {{{Universe2|}}}
+        | ValueRef    = {{{UniverseRef|}}}
+        }}</format>
+    </data>
+    <data source="Sector">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Sector}} Sector</label>
+      <format>{{#invoke:ComicsInfobox/Character|Sector
+        | Value       = {{{Sector|}}}
+        }}</format>
+    </data>
+    <data source="Partner">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Partner}} Partner</label>
+    </data>
+    <data source="PlaceOfBirth">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Place of Birth}} Place of Birth</label>
+      <format>{{#invoke:ComicsInfobox/Character|Ctry
+        | Value       = {{{PlaceOfBirth|}}}
+        }}</format>
+    </data>
+    <data source="PlaceOfCreation">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Place of Creation}} Place of Creation</label>
+      <format>{{#invoke:ComicsInfobox/Character|Ctry
+        | Value       = {{{PlaceOfCreation|}}}
+        }}</format>
+    </data>
+    <data source="PlaceOfDeath">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Place of Death}} Place of Death</label>
+      <format>{{#invoke:ComicsInfobox/Character|Ctry
+        | Value       = {{{PlaceOfDeath|}}}
+        }}</format>
+    </data>
+    <data source="PlaceOfDestruction">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Place of Destruction}} Place of Destruction</label>
+      <format>{{#invoke:ComicsInfobox/Character|Ctry
+        | Value       = {{{PlaceOfDestruction|}}}
+        }}</format>
+    </data>
+    <data source="Creators">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Creators}} Creators</label>
+      <format>{{#invoke:ComicsInfobox/Character|Creators
+        | Value       = {{{Creators|}}}
+        | Value2      = {{{Creators2|}}}
+        }}</format>
+    </data>
+    <data source="OriginalPublisher">
+      <label>{{#invoke:ComicsHF|HelpButton
+        | buttonsize = {{{buttonsize|10px}}}
+        | Label = Original Publisher}} Original Publisher</label>
+      <format>{{#invoke:ComicsInfobox/Character|OriginalPublisher
+        | Value       = {{{OriginalPublisher|}}}
+        }}</format>
+    </data>
+  </group>
+  <group layout="horizontal">
+    <data source="First">
+      <label>First Appearance</label>
+      <default>[[:Category:Character First Appearance Needed|Unknown]][[Category:Character First Appearance Needed]]</default>
+      <format>{{#if: {{#pos:{{{First}}}|Season}}
+      | {{Ed| {{{First|}}} }}
+      | {{#if: {{#pos:{{{First}}}|#}}{{#pos:{{{First}}}|Vol}}
+          | {{Cid|{{{First}}}}}
+          | {{{First|}}}
+          }}
+      }}{{#if: {{{First2|}}} | &nbsp;{{{First2}}} }}</format>
+    </data>
+    <data source="Last">
+      <label>Last Appearance</label>
+      <format>{{#if:{{#pos:{{{Last|}}}|Season}}
+      | {{Ed|{{{Last|}}}}}
+      | {{#if: {{#pos:{{{Last|}}}|#}}{{#pos:{{{Last|}}}|Vol}}
+            | {{Cid|{{{Last|}}}}}
+            | {{{Last|}}}
+        }}
+      }}</format>
+    </data>
+    <data source="Death">
+      <label>Appearance of Death</label>
+      <format>{{#if:{{#pos:{{{Death|}}}|Season}}
+      | {{Ed|{{{Death|}}}}}
+      | {{#if: {{#pos:{{{Death|}}}|#}}{{#pos:{{{Death|}}}|Vol}}
+            | {{Cid|{{{Death|}}}}}
+            | {{{Death|}}}
+        }}
+      }}</format>
+    </data>
+  </group>
+</infobox>
